@@ -22,6 +22,7 @@ namespace My_StopSignDetector
         /// <returns>The model image and observed image, the matched features and homography projection.</returns>
         /// <returns>the distance indicator,(smaller than 1.0), increases towards 1.0 while approching the item</returns>
         public static int index=0;
+        int a =3
         public static int areathreshold = 500;
         public static int CountContours(System.Drawing.Bitmap temp)
         {
