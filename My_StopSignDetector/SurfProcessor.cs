@@ -11,7 +11,7 @@ using Emgu.CV.Util;
 
 namespace My_StopSignDetector
 {
-    class SurfProcessor :CountContour,GetAreaFromPoints
+    class SurfProcessor :ImagePropertiesAnalyzer
     {
         public  int CountContours(System.Drawing.Bitmap temp)
         {

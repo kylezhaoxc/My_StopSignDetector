@@ -7,8 +7,9 @@ using System.Drawing;
 
 namespace My_StopSignDetector
 {
-    interface GetAreaFromPoints
+    interface ImagePropertiesAnalyzer
     {
+        int CountContours(System.Drawing.Bitmap temp);
         double getarea(PointF[] pts);
     }
 }
