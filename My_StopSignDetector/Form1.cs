@@ -28,15 +28,15 @@ namespace My_StopSignDetector
         // object that will be used to synchronize UI & capture thread
         private Object syncRoot = new Object();
         //value of the matched area that will be used to filter mismatches and far-away-matches
-        private int areathreshold = 500;
+        public int areathreshold = 500;
         // threshold value of positive votes, decresing the interferences.
-        private int surr_acc = 50;
+        public int surr_acc = 50;
 
-        private System.Drawing.Bitmap modelpic_l;
-        private System.Drawing.Bitmap modelpic_s;
+        public System.Drawing.Bitmap modelpic_l;
+        public System.Drawing.Bitmap modelpic_s;
         // two Bitmap resources that will hold the most recent captured image
-        private System.Drawing.Bitmap largeBitmap1;
-        private System.Drawing.Bitmap smallBitmap1;
+        public System.Drawing.Bitmap largeBitmap1;
+        public System.Drawing.Bitmap smallBitmap1;
         // a timer that will run on the UI thread, to update the UI periodically
         private System.Windows.Forms.Timer uiUpdateTimer;
         long time = 0; double area = 0; Image<Bgr, Byte> match_res;
@@ -132,7 +132,7 @@ namespace My_StopSignDetector
                         largeBitmap1 = b1;
                         smallBitmap1 = bs;
                         if(modelpic_l!=null)
-                        match_res = (new SurfProcessor()).DrawResult(new Image<Gray, Byte>(modelpic_l), new Image<Gray, Byte>(largeBitmap1), out time,out area,areathreshold,out center);
+                        match_res = DrawMatches.Draw(new Image<Gray, Byte>(modelpic_l), new Image<Gray, Byte>(largeBitmap1), out time,out area,areathreshold,out center);
                     }
             }
         }
