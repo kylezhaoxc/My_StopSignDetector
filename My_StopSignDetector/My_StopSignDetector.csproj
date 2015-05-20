@@ -79,7 +79,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CountContour.cs" />
     <Compile Include="GetAreaFromPoints.cs" />
     <Compile Include="SurfProcessor.cs" />
     <Compile Include="Form1.cs">
