@@ -1,6 +1,4 @@
-﻿using BetterTogether.Bluetooth;
-using BetterTogether.Device;
-using BetterTogether.Media;
+﻿
 using System;
 using System.Data;
 using System.Threading;

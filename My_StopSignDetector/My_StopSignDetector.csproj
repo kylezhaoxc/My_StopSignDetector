@@ -32,9 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BetterTogetherPCLib">
-      <HintPath>..\..\..\..\..\Downloads\BetterTogetherPCLib.dll</HintPath>
-    </Reference>
     <Reference Include="Emgu.CV">
       <HintPath>..\..\..\..\..\..\..\Emgu\emgucv-windows-universal-cuda 2.4.10.1940\bin\Emgu.CV.dll</HintPath>
     </Reference>
