@@ -11,20 +11,9 @@ using Emgu.CV.Util;
 
 namespace My_StopSignDetector
 {
-    class DrawMatches
+    class SurfProcessor :CountContour,GetAreaFromPoints
     {
-        /// <summary>
-        /// Draw the model image and observed image, the matched features and homography projection.
-        /// </summary>
-        /// <param name="modelImage">The model image</param>
-        /// <param name="observedImage">The observed image</param>
-        /// <param name="matchTime">The output total time for computing the homography matrix.</param>
-        /// <returns>The model image and observed image, the matched features and homography projection.</returns>
-        /// <returns>the distance indicator,(smaller than 1.0), increases towards 1.0 while approching the item</returns>
-        public static int index=0;
-        int a =3
-        public static int areathreshold = 500;
-        public static int CountContours(System.Drawing.Bitmap temp)
+        public  int CountContours(System.Drawing.Bitmap temp)
         {
             int ContourNumber = 0;
             Image<Gray, Byte> gray = new Image<Gray, byte>(temp);
@@ -45,7 +34,7 @@ namespace My_StopSignDetector
 
             return ContourNumber;
         }
-        public static double getarea( PointF[] pts)
+        public  double getarea( PointF[] pts)
         {
             PointF homolt, homort, homorb, homolb;
             PointF zero = new PointF(0, 0); int zerocount = 0;
@@ -70,7 +59,7 @@ namespace My_StopSignDetector
             double obarea = Math.Sqrt(p_t * (p_t - top) * (p_t - right) * (p_t - middle)) + Math.Sqrt(p_b * (p_b - left) * (p_b - bottom) * (p_b - middle));
             return obarea;
         }
-        public static Image<Bgr, Byte> Draw(Image<Gray, Byte> modelImage, Image<Gray, byte> observedImage, out long matchTime,out double area,int minarea,out Point center)
+        public  Image<Bgr, Byte> DrawResult(Image<Gray, Byte> modelImage, Image<Gray, byte> observedImage, out long matchTime,out double area,int minarea,out Point center)
         {
             center = new Point(320,240);
             Stopwatch watch;
